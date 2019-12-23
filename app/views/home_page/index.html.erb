@@ -1,0 +1,12 @@
+<h1>Welcome to the tribe browser game</h1>
+<% if logged_in? %>
+You are logged in, <%= current_user.username %>
+<%= button_to "Log out", '/logout', method: :get %>
+<% else %>
+<p>
+	Please log in to play
+	<%= button_to "Login", '/login', {method: :get, 'class': 'mui-btn mui-btn--primary mui-btnraised'}  %>
+	<%= button_to "Register", '/users/new', { method: :get, 'class': 'mui-btn mui-btn--primary mui-btnraied' } %>
+</p>
+
+<% end %>
