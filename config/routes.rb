@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'village/index'
   resources :users, only: [:new, :create]
 
   get 'login', to: 'sessions#login'

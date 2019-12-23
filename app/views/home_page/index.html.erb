@@ -1,13 +1,31 @@
 <h1>Welcome to the tribe browser game</h1>
-<% if logged_in? %>
-You are logged in, <%= current_user.username %>
-<%= button_to "Log out", '/logout', {method: :get, 'class': 'mui-btn mui-btn--primary mui-btnraised'} %>
-<% else %>
-<p>
-	Please log in to play
-	<%= button_to "Login", '/login', {method: :get, 'class': 'mui-btn mui-btn--primary mui-btnraised'}  %>
-	<%= button_to "Register", '/users/new', { method: :get, 'class': 'mui-btn mui-btn--primary mui-btnraised' } %>
-	
-</p>
 
-<% end %>
+<div id="homepage_splitview">
+	<div class="login">
+		<% if logged_in? %>
+			<h3>You are logged in, <%= current_user.username %></h3>
+			<%= button_to "Log out", '/logout', {method: :get, 'class': 'mui-btn mui-btn--primary mui-btnraised'} %>
+		<% else %>
+		<p>
+			<h3>Login</h3>
+			<p>Please log in to play</p>
+			<%= button_to "Login", '/login', {method: :get, 'class': 'mui-btn mui-btn--primary mui-btnraised'}  %>
+			<%= button_to "Register", '/users/new', { method: :get, 'class': 'mui-btn mui-btn--primary mui-btnraised' } %>
+			
+		</p>
+		<% end %>
+	</div>
+
+	<div class="news">
+		<h3>News</h3>
+		<p>
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fringilla diam eget facilisis placerat. Aliquam sodales, leo eu cursus gravida, elit nisl suscipit elit, in pellentesque sapien ex vitae urna. Sed id massa erat. In bibendum ultricies placerat. Sed mattis elementum posuere. Fusce sapien velit, scelerisque in est eu, fermentum scelerisque risus. Quisque tempor diam diam, vel molestie leo cursus at. Pellentesque sodales ante dui, non hendrerit nisi rutrum at. Quisque gravida est ut varius convallis. Nulla et ligula risus. Praesent pulvinar convallis pellentesque. Mauris quis ligula at augue fringilla consectetur vel vitae magna. Aliquam consectetur elit sed quam euismod tempus. Etiam mattis sem at nunc accumsan suscipit.
+		<br />
+
+		Suspendisse tincidunt, metus sed mattis dapibus, nunc risus mollis ligula, tristique rutrum sem sapien at magna. Aenean volutpat dolor nec quam suscipit, eget suscipit purus vestibulum. Fusce vitae ullamcorper ligula. Maecenas mattis turpis nec magna vestibulum, ac interdum lacus sollicitudin. Donec dui sapien, sodales et placerat vitae, lobortis et lectus. Integer blandit nisi a tempus consequat. Vestibulum elementum, ante quis gravida fringilla, ante magna viverra mi, quis volutpat neque lorem non ligula. Suspendisse ut est ac dolor rhoncus rhoncus a ac velit. Maecenas tincidunt eget ligula et consequat. Integer ac lectus neque. Nullam id tempus orci. Nam mi massa, sagittis id semper in, varius eget sapien. Nullam iaculis suscipit pulvinar. Ut id tristique dui.
+		<br />
+
+		Quisque odio augue, dapibus non felis eu, finibus finibus nibh. Aliquam nibh erat, finibus vitae mollis in, porta a dui. Nulla enim augue, euismod a ultricies non, rutrum non justo. Aliquam nec tempor nisi, non pretium ligula. Phasellus non mauris ac leo faucibus suscipit non sed purus. Aliquam eget justo eu velit consectetur sagittis. Sed congue eleifend eros in vulputate. Pellentesque nec finibus dui, in ultrices odio. Integer accumsan malesuada porttitor. Ut leo ligula, vehicula eget mi vitae, feugiat molestie mauris. Ut egestas pellentesque neque, id vehicula eros elementum ornare. Maecenas odio ex, egestas non maximus nec, maximus eget metus. Aliquam at velit vel orci gravida feugiat vel sit amet arcu. Ut in massa libero. Quisque maximus libero at nisi commodo, et dignissim massa tincidunt.
+		</p>
+	</div>
+</div>
