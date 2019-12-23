@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  skip_before_action :authorized, only: [:new, :create]
+
   # Create a user for the form to map to
   def new
     @user = User.new

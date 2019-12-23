@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  skip_before_action :authorized, only: [:login, :create]
+
   # Render the login form
   def login
     @error = request.GET[:error]
