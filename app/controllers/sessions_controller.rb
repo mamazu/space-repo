@@ -4,7 +4,6 @@ class SessionsController < ApplicationController
     @error = request.GET[:error]
   end
 
-  # Fill the session with the authenticated user
   def create
     @user = User.find_by(username: params[:username])
     if @user && @user.authenticate(params[:password]) 
@@ -15,7 +14,9 @@ class SessionsController < ApplicationController
     end
   end
 
-  # Reset the session
+  def login
+  end
+
   def logout
     session[:user_id] = nil
     redirect_to '/'

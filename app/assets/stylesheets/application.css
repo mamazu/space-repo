@@ -17,6 +17,7 @@
 	padding: 0;
 	margin: 0;
 }
+
 body {
 	font-family: sans-serif;
 }
@@ -24,4 +25,23 @@ body {
 div#body {
 	padding: 1em 2.5%;
 	margin: auto;
+}
+
+h1 {
+	font-family: roboto slab;
+	text-align: center;
+}
+
+h3 {
+	font-family: roboto;
+	text-align: left;
+}
+
+/** Overring default primary button color */
+.mui-btn--primary {
+	background-color: #019BAE;
+}
+
+.mui-btn--primary:hover {
+	background-color: #008B9C;
 }
