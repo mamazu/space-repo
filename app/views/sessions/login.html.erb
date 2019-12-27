@@ -1,19 +1,26 @@
 <h1>Login</h1>
 	<%if @error == "true" %>
+	<div class=modal>
+		<p> Password wrong or not Registered!</p>
+		<a href="/users/new" class="regi" ><button class="mui-btn mui-btn--primary" >Register</button></a>
+		<a href="/login" class="back"><button class="mui-btn mui-btn--primary" >Back</button></a>
+	</div>
  <script>
   function activateModal() {
     // initialize modal element
-    var modalEl = document.createElement('div');
-    modalEl.style.width = '400px';
-    modalEl.style.height = '300px';
-    modalEl.style.margin = '100px auto';
+	
+   	let modalEl = document.querySelector(".modal");
+   // var modalEl = document.createElement('div');
+    modalEl.style.width = '30%';
+    modalEl.style.height = '30%';
+    modalEl.style.margin = '7% auto';
     modalEl.style.backgroundColor = '#fff';
-	modalEl.innerHTML = '<a href="/login"s><button class="mui-btn mui-btn--primary" >Zurueck</button></a>';
     // show modal
     mui.overlay('on', modalEl);
   }
   activateModal()
 </script>
+
 	<% end %>
 	<%= form_tag '/login' do %>
 	<div class="mui-textfield">
@@ -24,5 +31,6 @@
 	<%= label_tag :password%>
 	<%= password_field_tag :password%>
 	</div>
-	<%= submit_tag("Login", :class => 'mui-btn mui-btn--primary mui-btnraised') %>
+	<%= submit_tag("Login", :class => 'mui-btn mui-btn--primary mui-btnraised') %>	
 <%end%>
+<%= button_to "Zurück", '/', { method: :get, 'class': 'mui-btn mui-btn--primary mui-btnraised'} %>
