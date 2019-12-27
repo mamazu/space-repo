@@ -4,15 +4,14 @@
 	<div class="login">
 		<% if logged_in? %>
 			<h3>You are logged in, <%= current_user.username %></h3>
-			<%= button_to 'To village', '/village' %>
-
-			<%= button_to "Log out", '/logout', {method: :get, 'class': 'mui-btn mui-btn--primary mui-btnraised'} %>
+			<%= button_to 'To village', :village_overview, {method: :get, 'class': 'mui-btn mui-btn--primary mui-btnraised'} %>
+			<%= button_to "Log out", :logout, {method: :get, 'class': 'mui-btn mui-btn--primary mui-btnraised'} %>
 		<% else %>
 		<p>
 			<h3>Login</h3>
 			<p>Please log in to play</p>
-			<%= button_to "Login", '/login', {method: :get, 'class': 'mui-btn mui-btn--primary mui-btnraised'}  %>
-			<%= button_to "Register", '/users/new', { method: :get, 'class': 'mui-btn mui-btn--primary mui-btnraised' } %>
+			<%= button_to "Login", :login, {method: :get, 'class': 'mui-btn mui-btn--primary mui-btnraised'}  %>
+			<%= button_to "Register", :new_user, { method: :get, 'class': 'mui-btn mui-btn--primary mui-btnraised' } %>
 			
 		</p>
 		<% end %>

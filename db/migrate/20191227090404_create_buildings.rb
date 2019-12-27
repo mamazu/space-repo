@@ -3,6 +3,7 @@ class CreateBuildings < ActiveRecord::Migration[6.0]
     create_table :buildings do |t|
       t.string :level
       t.string :name
+      t.belongs_to :village
 
       t.timestamps
     end

@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_23_160435) do
+ActiveRecord::Schema.define(version: 2019_12_27_090404) do
+
+  create_table "buildings", force: :cascade do |t|
+    t.string "level"
+    t.string "name"
+    t.integer "village_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["village_id"], name: "index_buildings_on_village_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username"
