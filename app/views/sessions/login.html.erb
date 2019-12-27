@@ -23,14 +23,14 @@
 
 	<% end %>
 	<%= form_tag '/login' do %>
-	<div class="mui-textfield">
+	<div class="mui-textfield input">
 	<%= label_tag :username%>
 	<%= text_field_tag :username %>
 	</div>
-	<div class="mui-textfield">
+	<div class="mui-textfield input">
 	<%= label_tag :password%>
 	<%= password_field_tag :password%>
 	</div>
 	<%= submit_tag("Login", :class => 'mui-btn mui-btn--primary mui-btnraised') %>	
 <%end%>
-<%= button_to "Zurück", :welcome, { method: :get, 'class': 'mui-btn mui-btn--primary mui-btnraised'} %>
+<%= button_to "Back", :welcome, { method: :get, 'class': 'mui-btn mui-btn--primary mui-btnraised'} %>

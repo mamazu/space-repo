@@ -1,12 +1,13 @@
 <h1>Register</h1>
 <%= form_for @user do |f|%>
-	<div class="mui-textfield">
+	<div class="mui-textfield input">
 		<%= f.label :username%>
 		<%= f.text_field :username%>
 	</div>
-	<div class="mui-textfield">
+	<div class="mui-textfield input">
 		<%= f.label :password%>
 		<%= f.password_field :password%>
 	</div>
 	<%= f.submit :class => 'mui-btn mui-btn--primary mui-btnraised' %>
 <%end%>
+	<%= button_to "Back", :welcome, { method: :get, 'class': 'mui-btn mui-btn--primary mui-btnraised'} %>
