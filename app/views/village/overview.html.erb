@@ -1,0 +1,10 @@
+<h1>Village: <%= @village.name %></h1>
+<h3>Buildings</h3>
+
+<% @village.buildings.each do |b| %>
+	<div class="mui-panel">
+			<b><%= b.name %></b>
+			<div class="mui-divider"></div>
+			Level <%= b.level %>
+	</div>
+<% end %>
