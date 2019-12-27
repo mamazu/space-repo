@@ -1,36 +1,32 @@
 <h1>Login</h1>
 	<%if @error == "true" %>
-	<div class=modal>
-		<p> Password wrong or not Registered!</p>
-		<%=button_to "Register", :new_user, {method: :get, 'class': "mui-btn mui-btn--primary register"} %>
-		<%=button_to "Back", :login, {method: :get, 'class': "mui-btn mui-btn--primary back"} %>
-	</div>
- <script>
-  function activateModal() {
-    // initialize modal element
-	
-   	let modalEl = document.querySelector(".modal");
-   // var modalEl = document.createElement('div');
-    modalEl.style.width = '30%';
-    modalEl.style.height = '30%';
-    modalEl.style.margin = '7% auto';
-    modalEl.style.backgroundColor = '#fff';
-    // show modal
-    mui.overlay('on', modalEl);
-  }
-  activateModal()
-</script>
-
+		<div class=modal>
+			<p> Password wrong or not Registered!</p>
+			<%=button_to "Register", :new_user, {method: :get, 'class': "mui-btn mui-btn--primary register"} %>
+			<%=button_to "Back", :login, {method: :get, 'class': "mui-btn mui-btn--primary back"} %>
+		</div>
+		<script>
+			let modalEl = document.querySelector(".modal");
+			// var modalEl = document.createElement('div');
+				modalEl.style.width = '30%';
+				modalEl.style.height = '30%';
+				modalEl.style.margin = '7% auto';
+				modalEl.style.backgroundColor = '#fff';
+				// show modal
+				mui.overlay('on', modalEl);
+		</script>
 	<% end %>
-	<%= form_tag '/login' do %>
+
+<%= form_tag '/login' do %>
 	<div class="mui-textfield input">
-	<%= label_tag :username%>
-	<%= text_field_tag :username %>
+		<%= label_tag :username%>
+		<%= text_field_tag :username %>
 	</div>
 	<div class="mui-textfield input">
-	<%= label_tag :password%>
-	<%= password_field_tag :password%>
+		<%= label_tag :password%>
+		<%= password_field_tag :password%>
 	</div>
 	<%= submit_tag("Login", :class => 'mui-btn mui-btn--primary mui-btnraised') %>	
 <%end%>
+
 <%= button_to "Back", :welcome, { method: :get, 'class': 'mui-btn mui-btn--primary mui-btnraised'} %>
