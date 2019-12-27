@@ -2,8 +2,8 @@
 	<%if @error == "true" %>
 	<div class=modal>
 		<p> Password wrong or not Registered!</p>
-		<a href="/users/new" class="regi" ><button class="mui-btn mui-btn--primary" >Register</button></a>
-		<a href="/login" class="back"><button class="mui-btn mui-btn--primary" >Back</button></a>
+		<%=button_to "Register", :new_user, {method: :get, 'class': "mui-btn mui-btn--primary register"} %>
+		<%=button_to "Back", :login, {method: :get, 'class': "mui-btn mui-btn--primary back"} %>
 	</div>
  <script>
   function activateModal() {
@@ -33,4 +33,4 @@
 	</div>
 	<%= submit_tag("Login", :class => 'mui-btn mui-btn--primary mui-btnraised') %>	
 <%end%>
-<%= button_to "Zurück", '/', { method: :get, 'class': 'mui-btn mui-btn--primary mui-btnraised'} %>
+<%= button_to "Zurück", :welcome, { method: :get, 'class': 'mui-btn mui-btn--primary mui-btnraised'} %>
