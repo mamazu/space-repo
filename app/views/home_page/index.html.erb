@@ -4,6 +4,8 @@
 	<div class="login">
 		<% if logged_in? %>
 			<h3>You are logged in, <%= current_user.username %></h3>
+			<%= button_to 'To village', '/village' %>
+
 			<%= button_to "Log out", '/logout', {method: :get, 'class': 'mui-btn mui-btn--primary mui-btnraised'} %>
 		<% else %>
 		<p>

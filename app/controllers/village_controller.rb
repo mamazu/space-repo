@@ -1,5 +1,5 @@
 class VillageController < ApplicationController
-  def index
+  def overview
     @user = current_user
     if !Village.where(:name => 'Name').exists?
       @village = Village.create(:name => 'Name', :level => 0, :position_x => 0, :position_y => 0)

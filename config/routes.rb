@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'village/index'
+  get 'village', to: 'village#overview', as: 'village_overview'
   resources :users, only: [:new, :create]
 
   get 'login', to: 'sessions#login'
