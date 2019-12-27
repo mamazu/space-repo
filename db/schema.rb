@@ -10,14 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_27_090404) do
+ActiveRecord::Schema.define(version: 2019_12_27_170035) do
+
+  create_table "building_levels", force: :cascade do |t|
+    t.integer "building_id", null: false
+    t.integer "level"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["building_id"], name: "index_building_levels_on_building_id"
+  end
 
   create_table "buildings", force: :cascade do |t|
-    t.string "level"
+    t.string "level", null: false
     t.string "name"
     t.integer "village_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "default"
     t.index ["village_id"], name: "index_buildings_on_village_id"
   end
 
@@ -38,4 +47,5 @@ ActiveRecord::Schema.define(version: 2019_12_27_090404) do
     t.index ["position_x", "position_y"], name: "unique_position_per_village", unique: true
   end
 
+  add_foreign_key "building_levels", "buildings"
 end

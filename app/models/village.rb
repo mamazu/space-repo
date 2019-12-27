@@ -5,7 +5,7 @@ class Village < ApplicationRecord
 
 	def after_initialize
 		if self.new_record?
-			buildings << Building.create(:name => 'Main Buildings', :level => 1)
+			buildings << Building.create(:name => 'Main Building', :level => 1)
 			buildings << Building.create(:name => 'Lumberjack', :level => 1)
 			buildings << Building.create(:name => 'Clay pit')
 		end

@@ -4,6 +4,7 @@ class CreateBuildings < ActiveRecord::Migration[6.0]
       t.string :level
       t.string :name
       t.belongs_to :village
+      t.boolean :default
 
       t.timestamps
     end
