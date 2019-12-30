@@ -5,9 +5,11 @@ class SessionsController < ApplicationController
   def login
     @error = request.GET[:error]
   end
+
   def zurueck
-  redirect_to '/'
+    redirect_to '/'
   end
+
   def create
     @user = User.find_by(username: params[:username])
     if @user && @user.authenticate(params[:password]) 
