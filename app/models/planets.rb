@@ -1,5 +1,6 @@
 class Planets < ApplicationRecord
   has_many :buildings
+  belongs_to :user
 
   after_initialize :after_initialize
 

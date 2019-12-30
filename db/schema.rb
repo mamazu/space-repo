@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_30_103403) do
+ActiveRecord::Schema.define(version: 2019_12_30_172507) do
 
   create_table "annomalies", force: :cascade do |t|
     t.string "type"
@@ -34,11 +34,11 @@ ActiveRecord::Schema.define(version: 2019_12_30_103403) do
   create_table "buildings", force: :cascade do |t|
     t.string "level", null: false
     t.string "name"
-    t.integer "planet_id"
+    t.integer "planets_id"
     t.boolean "default"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["planet_id"], name: "index_buildings_on_planet_id"
+    t.index ["planets_id"], name: "index_buildings_on_planets_id"
   end
 
   create_table "map_decorations", force: :cascade do |t|
@@ -64,6 +64,8 @@ ActiveRecord::Schema.define(version: 2019_12_30_103403) do
     t.string "level"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_planets_on_user_id"
   end
 
   create_table "sun_systems", force: :cascade do |t|
@@ -82,4 +84,5 @@ ActiveRecord::Schema.define(version: 2019_12_30_103403) do
   end
 
   add_foreign_key "building_levels", "buildings"
+  add_foreign_key "planets", "users"
 end
