@@ -1,0 +1,2 @@
+class MapDecoration < ApplicationRecord
+end

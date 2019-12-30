@@ -1,0 +1,2 @@
+class Annomalie < ApplicationRecord
+end

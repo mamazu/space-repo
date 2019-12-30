@@ -80,4 +80,5 @@ Kampf dauert über mehrere Stunden (je nach Kampfgröße). Es können Verstärku
 - Deko Planeten (Unbewohnbar)
 - Anomalien
 - Unpassierbare Gebiete (Sonnen)
+- Sonnensysteme ( Sonne als Zentrum Planeten Drum herum)
 - Clan / Fraktionsgebiete
