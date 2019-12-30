@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'map/main'
   get 'village', to: 'village#overview', as: 'village_overview'
   resources :users, only: [:new, :create]
 

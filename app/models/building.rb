@@ -1,5 +1,5 @@
 class Building < ApplicationRecord
-	belongs_to :village
+  belongs_to :village
 
-	attribute :level, :integer, default: 1
+  attribute :level, :integer, default: 1
 end
