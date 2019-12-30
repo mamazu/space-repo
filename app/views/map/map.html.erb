@@ -1,5 +1,5 @@
 <h1>Map</h1>
-<table id=map> 
+<table id="map"> 
 <% (0..@grid_x).each do |i| %>
   <tr>
   <% (0..@grid_y).each do |l| %>
@@ -7,9 +7,9 @@
         <% location.x == i && location.y == l %>            
     <% end %>
     <% if bla == true %>
-        <td id=grid ><%= "X" %></td>
+        <td><%= "X" %></td>
     <% else %>
-        <td id=grid></td>
+        <td></td>
     <% end %>
   <% end %>
   </tr>
