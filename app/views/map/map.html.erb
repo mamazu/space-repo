@@ -3,10 +3,10 @@
 <% (0..@grid_x).each do |i| %>
   <tr>
   <% (0..@grid_y).each do |l| %>
-    <% bla = @locations.any? do |location|%>
+    <% obj_at_location = @locations.select do |location|%>
         <% location.x == i && location.y == l %>            
     <% end %>
-    <% if bla == true %>
+    <% if !obj_at_location.empty? %>
         <td><%= "X" %></td>
     <% else %>
         <td></td>
