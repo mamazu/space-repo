@@ -20,6 +20,21 @@
   </head>
 
   <body>
+    <nav class="mui-appbar">
+      <table>
+        <tr class="mui--appbar-height">
+          <td class="<% if current_page?(:planets_overview) %>active<% end %>">
+            <%= link_to "Planets", :planets_overview %>
+          </td>
+          <td class="<% if current_page?(:map) %>active<% end %>">
+            <%= link_to "Map", :map %>
+          </td>
+          <td class="<% if current_page?(:logout) %>active<% end %>">
+            <%= link_to "Logout", :logout%>
+          </td>
+        </tr>
+      </table>
+    </nav>
     <div id="body">
       <%= yield %>
     </div>
