@@ -34,11 +34,11 @@ ActiveRecord::Schema.define(version: 2019_12_30_103403) do
   create_table "buildings", force: :cascade do |t|
     t.string "level", null: false
     t.string "name"
-    t.integer "village_id"
+    t.integer "planet_id"
     t.boolean "default"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["village_id"], name: "index_buildings_on_village_id"
+    t.index ["planet_id"], name: "index_buildings_on_planet_id"
   end
 
   create_table "map_decorations", force: :cascade do |t|
@@ -56,6 +56,14 @@ ActiveRecord::Schema.define(version: 2019_12_30_103403) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["typ_id"], name: "index_maps_on_typ_id"
+    t.index ["x", "y"], name: "unique_map_position", unique: true
+  end
+
+  create_table "planets", force: :cascade do |t|
+    t.string "name"
+    t.string "level"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "sun_systems", force: :cascade do |t|
@@ -71,16 +79,6 @@ ActiveRecord::Schema.define(version: 2019_12_30_103403) do
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "villages", force: :cascade do |t|
-    t.string "name"
-    t.string "level"
-    t.string "position_x"
-    t.string "position_y"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["position_x", "position_y"], name: "unique_position_per_village", unique: true
   end
 
   add_foreign_key "building_levels", "buildings"

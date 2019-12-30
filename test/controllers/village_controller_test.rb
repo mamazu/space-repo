@@ -1,8 +1,8 @@
 require 'test_helper'
 
-class VillageControllerTest < ActionDispatch::IntegrationTest
+class PlanetsControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
-    get village_index_url
+    get planet_index_url
     assert_response :success
   end
 

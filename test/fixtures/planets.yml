@@ -3,11 +3,7 @@
 one:
   name: MyString
   level: MyString
-  position_x: MyString
-  position_y: MyString
 
 two:
   name: MyString
   level: MyString
-  position_x: MyString
-  position_y: MyString

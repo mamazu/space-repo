@@ -8,5 +8,6 @@ class CreateMaps < ActiveRecord::Migration[6.0]
 
       t.timestamps
     end
+    add_index :maps, [:x, :y], {unique: true, name: 'unique_map_position'}
   end
 end

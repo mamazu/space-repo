@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'village', to: 'village#overview', as: 'village_overview'
+  get 'planets', to: 'planets#overview', as: 'planets_overview'
   resources :users, only: [:new, :create]
 
   get 'login', to: 'sessions#login'

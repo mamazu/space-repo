@@ -1,4 +1,4 @@
-class Village < ApplicationRecord
+class Planets < ApplicationRecord
   has_many :buildings
 
   after_initialize :after_initialize

@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class VillageTest < ActiveSupport::TestCase
+class planetTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
