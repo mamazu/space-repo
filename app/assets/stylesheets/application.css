@@ -37,6 +37,24 @@ h3 {
 	text-align: left;
 }
 
+/** Styling the menu */
+nav table {
+	margin: auto;
+}
+nav td {
+	width: 10em;
+}
+
+nav td.active {
+	font-weight: bold;
+	font-size: 150%;
+	width: 7em;
+}
+
+nav td a {
+	color: white
+}
+
 /** Overring default primary button color */
 .mui-btn--primary {
 	background-color: #019BAE;
