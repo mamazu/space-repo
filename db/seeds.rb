@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
     @count = 0
-    while @count <= 1000 do
-        Map.create(:x => @count, :y => @count)
+    while @count <= 10 do
+        Map.create(:x => rand(10..90), :y => rand(10..90))
         @count = @count + 1
     end

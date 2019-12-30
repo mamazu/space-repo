@@ -1,5 +1,17 @@
-<h1>Map#main</h1>
-<% @locations.each do |bla| %>
-<%= bla.y %>
-<%= bla.x %>
+<h1>Map</h1>
+<table>
+<% (0..@grid_x).each do |i| %>
+  <tr>
+  <% (0..@grid_y).each do |l| %>
+    <% bla = @locations.any? do |location|%>
+        <% location.x == i && location.y == l %>            
+    <% end %>
+    <% if bla == true %>
+        <td><%= "X" %></td>
+    <% else %>
+        <td></td>
+    <% end %>
+  <% end %>
+  </tr>
 <% end %>
+</table>
