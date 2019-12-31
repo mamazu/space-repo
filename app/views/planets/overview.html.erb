@@ -1,10 +1,12 @@
-<h1>planets: <%= @planets.name %></h1>
-<h3>Buildings</h3>
+<% @planets.each do |planet| %>
+	<h1>Planet: <%= planet.name %></h1>
+	<h3>Buildings</h3>
 
-<% @planets.buildings.each do |b| %>
-	<div class="mui-panel">
-			<b><%= b.name %></b>
-			<div class="mui-divider"></div>
-			Level <%= b.level %>
-	</div>
+	<% planet.buildings.each do |b| %>
+		<div class="mui-panel">
+				<b><%= b.name %></b>
+				<div class="mui-divider"></div>
+				Level <%= b.level %>
+		</div>
+	<% end %>
 <% end %>

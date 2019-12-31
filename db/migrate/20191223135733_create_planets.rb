@@ -3,6 +3,8 @@ class CreatePlanets < ActiveRecord::Migration[6.0]
     create_table :planets do |t|
       t.string :name
       t.string :level
+      t.belongs_to :user
+
       t.timestamps
     end
 

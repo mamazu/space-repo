@@ -3,7 +3,7 @@ class CreateBuildings < ActiveRecord::Migration[6.0]
     create_table :buildings do |t|
       t.string :level
       t.string :name
-      t.belongs_to :planets
+      t.belongs_to :planet
       t.boolean :default
 
       t.timestamps

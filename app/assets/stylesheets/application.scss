@@ -41,8 +41,12 @@ h3 {
 nav table {
 	margin: auto;
 }
+
 nav td {
 	width: 10em;
+	a {
+		color: white
+	}
 }
 
 nav td.active {
@@ -51,15 +55,11 @@ nav td.active {
 	width: 7em;
 }
 
-nav td a {
-	color: white
-}
-
 /** Overring default primary button color */
 .mui-btn--primary {
 	background-color: #019BAE;
-}
 
-.mui-btn--primary:hover {
-	background-color: #008B9C;
+	:hover {
+		background-color: #008B9C;
+	}
 }
