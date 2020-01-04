@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'planet', to: 'planets#overview', as: 'planet_overview'
-  resources :users, only: [:new, :create]
+  get 'planet/assign', to: 'planets#assign_planet'
+  resources :users, only: %i[new create]
 
   get 'login', to: 'sessions#login'
   post 'login', to: 'sessions#create'

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_30_103403) do
+ActiveRecord::Schema.define(version: 2020_01_04_155209) do
 
   create_table "annomalies", force: :cascade do |t|
     t.string "type"
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 2019_12_30_103403) do
     t.boolean "traversable"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "type_name", null: false
     t.index ["typ_id"], name: "index_maps_on_typ_id"
     t.index ["x", "y"], name: "unique_map_position", unique: true
   end

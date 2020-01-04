@@ -1,0 +1,14 @@
+Style/Documentation:
+  Enabled: false
+Layout/LineLength:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+AllCops:
+  Exclude:
+    - 'node_modules/**/*'
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'script/**/*'
+    - 'bin/{rails,rake}'
