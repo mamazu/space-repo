@@ -12,6 +12,6 @@ class UsersController < ApplicationController
       params.require(:user).permit(:username, :password)
     )
     session[:user_id] = @user.id
-    redirect_to :welcome
+    redirect_to :planet_assign
   end
 end

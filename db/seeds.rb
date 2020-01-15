@@ -3,7 +3,7 @@
 
 # Generate random map entries
 @count = 0
-while @count <= 10
+while @count <= 100
   case @count % 3
   when 0
     type_name = 'annomalie'
@@ -18,8 +18,10 @@ while @count <= 10
   reference.save!
 
   begin
-    Map.create(x: rand(10..90), y: rand(10..90), type_name: type_name, typ_id: reference.id)
+    x = rand(10..90)
+    y = rand(10..90)
+    Map.create(x: x, y: y, type_name: type_name, typ_id: reference.id)
     @count += 1
-  rescue SQLite::ConstraintException => e
+  rescue ActiveRecord::RecordNotUnique => e
   end
 end
