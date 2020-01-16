@@ -1,5 +1,13 @@
 <% @planets.each do |planet| %>
 	<h1>Planet: <%= planet.name %></h1>
+		<div>
+			<%= form_with model: planet, class: 'mui-form--inline' do |f| %>
+				<div class="mui-textfield input">
+					<%= f.text_field :name %>
+				</div>
+				<%= f.submit "Rename", :class => 'mui-btn' %>
+			<% end %>
+		</div>
 	<h3>Buildings</h3>
 
 	<% planet.buildings.each do |b| %>

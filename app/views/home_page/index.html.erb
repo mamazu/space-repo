@@ -4,7 +4,7 @@
 	<div class="login">
 		<% if logged_in? %>
 			<h3>You are logged in, <%= current_user.username %></h3>
-			<%= button_to 'To planet', :planet_overview, {method: :get, 'class': 'mui-btn mui-btn--primary mui-btnraised'} %>
+			<%= button_to 'To planet', planets_path(), {method: :get, 'class': 'mui-btn mui-btn--primary mui-btnraised'} %>
 			<%= button_to "Log out", :logout, {method: :get, 'class': 'mui-btn mui-btn--primary mui-btnraised'} %>
 		<% else %>
 		<p>

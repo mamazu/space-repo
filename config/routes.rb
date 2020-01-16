@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  get 'planet', to: 'planets#overview', as: 'planet_overview'
+  resources :planets, only: %i[index update]
   get 'planet/assign', to: 'planets#assign_planet', as: 'planet_assign'
+
   resources :users, only: %i[new create]
 
   get 'login', to: 'sessions#login'

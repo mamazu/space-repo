@@ -1,7 +1,9 @@
 class Planet < ApplicationRecord
   has_many :buildings
   belongs_to :user, optional: true
+
   after_initialize :after_initialize
+
   attribute :level, :integer, default: 1
   attribute :name, :string, default: 'Planet'
 

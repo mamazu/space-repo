@@ -24,8 +24,8 @@
       <nav class="mui-appbar">
         <table>
           <tr class="mui--appbar-height">
-            <td class="<% if current_page?(:planet_overview) %>active<% end %>">
-              <%= link_to "Planet", :planet_overview %>
+            <td class="<% if current_page?(planets_path()) %>active<% end %>">
+              <%= link_to "Planet", planets_path() %>
             </td>
             <td class="<% if current_page?(:map) %>active<% end %>">
               <%= link_to "Map", :map %>
