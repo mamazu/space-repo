@@ -1,5 +1,12 @@
+<% content_for :javascript do %>
+	<script type="text/javascript" src="<%= asset_path('custom.js') %>"> </script>
+<% end %>
+
 <% @planets.each do |planet| %>
 	<h1>Planet: <%= planet.name %></h1>
+	<div class="mui-btn" onclick="boo(undefined, undefined)">
+		Edit
+	</div>
 		<div>
 			<%= form_with model: planet, class: 'mui-form--inline' do |f| %>
 				<div class="mui-textfield input">
